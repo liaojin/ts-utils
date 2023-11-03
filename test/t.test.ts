@@ -1,9 +1,10 @@
-# ts-utils
-typescript utils
+import {makeTest} from '../src/t'
+import express from 'express'
+import assect from 'assert'
 
 
-```
-makeTest(express().get("/hello",(req,res)=>{
+it("make",()=>{
+    return makeTest(express().get("/hello",(req,res)=>{
         res.json({
             code:0,
             msg:"hello jin"
@@ -12,4 +13,4 @@ makeTest(express().get("/hello",(req,res)=>{
         assect.equal(r.status,200)
         assect.equal(r.body.code,0)
     })
-```
+})
